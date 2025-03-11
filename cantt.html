@@ -9,32 +9,14 @@
         body {
             background-color: #f8f9fa;
             font-family: Arial, sans-serif;
-        }
-        .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 20px;
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        .card {
-            padding: 20px;
-            border-radius: 10px;
-            background: #fff;
-            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
-            text-align: center;
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-        }
-        .card:hover {
-            transform: scale(1.05);
-            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
         }
         .login-container {
             max-width: 400px;
-            margin: 100px auto;
             padding: 20px;
             background: white;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -68,6 +50,7 @@
         <input type="text" id="username" placeholder="Username" required>
         <input type="password" id="password" placeholder="Password" required>
         <button onclick="authenticateUser()">Login</button>
+        <p id="error-message" style="color: red; display: none;">Invalid username or password</p>
     </div>
     
     <div id="main-content" class="hidden">
@@ -100,12 +83,14 @@
         function authenticateUser() {
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('error-message');
             
             if (username === "admin" && password === "password123") {
                 document.getElementById('login').style.display = 'none';
                 document.getElementById('main-content').classList.remove('hidden');
+                document.body.style.display = 'block';
             } else {
-                alert("Invalid username or password");
+                errorMessage.style.display = 'block';
             }
         }
     </script>
