@@ -68,6 +68,18 @@
     </header>
 
     <main class="container">
+        <div class="login-container">
+            <h2>Login</h2>
+            <form onsubmit="return authenticateUser(event)">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+        <br>
+
         <nav>
             <ul>
                 <li><a href="#tab1">Update T/Fs Status at Stores</a></li>
@@ -146,6 +158,24 @@
     </footer>
 
     <script>
+
+     function authenticateUser(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            if (username === "admin" && password === "password123") {
+                alert("Login successful!");
+                document.querySelector('.login-container').style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+            } else {
+                alert("Invalid username or password");
+            }
+        }
+
+
+
+        
         const datetimeElement = document.getElementById('datetime');
         setInterval(() => {
             const now = new Date();
