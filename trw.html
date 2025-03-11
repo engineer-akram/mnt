@@ -68,17 +68,7 @@
     </header>
 
     <main class="container">
-        <div class="login-container">
-            <h2>Login</h2>
-            <form onsubmit="return authenticateUser(event)">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-                <button type="submit">Login</button>
-            </form>
-        </div>
-        <br>
+        
 
         <nav>
             <ul>
@@ -159,19 +149,7 @@
 
     <script>
 
-     function authenticateUser(event) {
-            event.preventDefault();
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-            
-            if (username === "admin" && password === "password123") {
-                alert("Login successful!");
-                document.querySelector('.login-container').style.display = 'none';
-                document.getElementById('content').style.display = 'block';
-            } else {
-                alert("Invalid username or password");
-            }
-        }
+     
 
 
 
