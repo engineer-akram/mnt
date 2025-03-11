@@ -90,6 +90,18 @@
 
     <main class="container">
         <h2>This offers following services</h2>
+        <div class="login-container">
+            <h2>Login</h2>
+            <form onsubmit="return authenticateUser(event)">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+        <br>
+
         <div class="grid">
             <div class="card"><a href="https://docs.google.com/forms/d/e/1FAIpQLSfkXyxFNlbNXvPU2S8UdgeQfH-dOzaoWROty1IY6Tm2h3GIiw/viewform?usp=header">Submit Online Checking</a></div>
             <div class="card"><a href="https://docs.google.com/spreadsheets/d/1DWRTCrT_kX19l4L2vxvOqzLNvJHxkQS9F5jcn905wzQ/edit?usp=sharing">View Checking Status</a></div>
@@ -111,6 +123,20 @@
             </form>
         </div>
     </main>
+    function authenticateUser(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            if (username === "admin" && password === "password123") {
+                alert("Login successful!");
+                document.querySelector('.login-container').style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+            } else {
+                alert("Invalid username or password");
+            }
+        }
+
     
     <footer class="container" style="text-align: center;">
         <p>&copy; 2025 GEPCO M&T Regional Office. All Rights Reserved.</p>
