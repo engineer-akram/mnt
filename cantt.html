@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>GEPCO M&T Cantt</title>
+    <title>Login Page</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
     <style>
         body {
-            background-color: #f8f9fa;
-            font-family: Arial, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            margin: 0;
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
         }
         .login-container {
             max-width: 400px;
@@ -39,44 +38,20 @@
             border-radius: 5px;
             cursor: pointer;
         }
-        .hidden {
+        .error-message {
+            color: red;
             display: none;
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
-    <div class="login-container" id="login">
+    <div class="login-container">
         <h2>Login</h2>
         <input type="text" id="username" placeholder="Username" required>
         <input type="password" id="password" placeholder="Password" required>
         <button onclick="authenticateUser()">Login</button>
-        <p id="error-message" style="color: red; display: none;">Invalid username or password</p>
-    </div>
-    
-    <div id="main-content" class="hidden">
-        <nav class="container">
-            <h1>GEPCO M&T Cantt Circle Gujranwala</h1>
-        </nav>
-    
-        <main class="container">
-            <h2>This offers following services</h2>
-            <div class="grid">
-                <div class="card"><a href="https://docs.google.com/forms/d/e/1FAIpQLSfkXyxFNlbNXvPU2S8UdgeQfH-dOzaoWROty1IY6Tm2h3GIiw/viewform?usp=header">Submit Online Checking</a></div>
-                <div class="card"><a href="https://docs.google.com/spreadsheets/d/1DWRTCrT_kX19l4L2vxvOqzLNvJHxkQS9F5jcn905wzQ/edit?usp=sharing">View Checking Status</a></div>
-                <div class="card"><a href="#">Update Progress of Data Retrieval</a></div>
-                <div class="card"><a href="#">Update Progress of Detection</a></div>
-                <div class="card"><a href="#">View Reports</a></div>
-                <div class="card"><a href="#">Contact Developer</a></div>
-                <div class="card"><a href="#">Feedback</a></div>
-                <div class="card">Email: <a href="mailto:regional@gepco.com">regional@gepco.com</a></div>
-            </div>
-        </main>
-    
-        <footer class="container" style="text-align: center;">
-            <p>&copy; 2025 GEPCO M&T Regional Office. All Rights Reserved.</p>
-            <p>For feedback, contact: <a href="mailto:eengineer.akram@gmail.com">eengineer.akram@gmail.com</a></p>
-            <p><strong>Legal Disclaimer:</strong> The information on this website is for official use only. Unauthorized use, distribution, or reproduction is strictly prohibited. GEPCO is not responsible for any misuse of this content.</p>
-        </footer>
+        <p id="error-message" class="error-message">Invalid username or password</p>
     </div>
     
     <script>
@@ -85,10 +60,8 @@
             const password = document.getElementById('password').value;
             const errorMessage = document.getElementById('error-message');
             
-            if (username === "admin" && password === "password123") {
-                document.getElementById('login').style.display = 'none';
-                document.getElementById('main-content').classList.remove('hidden');
-                document.body.style.display = 'block';
+            if (username === "admin" && password === "password122") {
+                window.location.href = "cantt.html"; // Change to your target link
             } else {
                 errorMessage.style.display = 'block';
             }
