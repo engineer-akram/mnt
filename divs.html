@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GEPCO M&T City Circle Gujranwala</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+        .dropdown button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            width: 100%;
+            background: white;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            z-index: 10;
+        }
+        .dropdown-content a {
+            display: block;
+            padding: 12px;
+            text-decoration: none;
+            color: #333;
+            border-bottom: 1px solid #ddd;
+            transition: background 0.3s;
+        }
+        .dropdown-content a:last-child {
+            border-bottom: none;
+        }
+        .dropdown-content a:hover {
+            background: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <nav class="container">
+        <h1>GEPCO M&T City Circle Gujranwala</h1>
+    </nav>
+    
+    <main class="container">
+        <div class="dropdown">
+            <button onclick="toggleDropdown('dropdown1')">Select Division To Update Information</button>
+            <div id="dropdown1" class="dropdown-content">
+                <a href="grw_division1.html">GRW Division No 1</a>
+                <a href="grw_division2.html">GRW Division No 2</a>
+                <a href="grw_division3.html">GRW Division No 3</a>
+                <a href="division_kamoke.html">Division Kamoke</a>
+                <a href="division_nvirkana.html">Division N/Virkana</a>
+            </div>
+        </div>
+    </main>
+    
+    <script>
+        function toggleDropdown(id) {
+            let dropdown = document.getElementById(id);
+            dropdown.style.display = (dropdown.style.display === 'block') ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>
