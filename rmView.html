@@ -11,20 +11,20 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.4/vfs_fonts.js"></script>
   <style>
     body { font-family: "Inter", sans-serif; text-align: center; margin: 20px; background-color: #eef2f7; }
-    h1 { color: #333; font-weight: 600; font-size: 2.56%; }
+    h1 { color: #333; font-weight: 600; }
     .container { width: 90%; max-width: 900px; margin: auto; padding: 20px; background: white; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15); transition: 0.3s; }
     .container:hover { box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2); }
     table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-    th, td { padding: 1.67px; border-bottom: 1px solid #ddd; text-align: left; font-size: 2.56%; }
+    th, td { padding: 14px; border-bottom: 1px solid #ddd; text-align: left; font-size: 16px; }
     thead th { background-color: #007bff; color: white; position: sticky; top: 0; }
     tr:nth-child(even) { background-color: #f8f9fc; }
     tr:hover { background-color: #dde6f1; transition: 0.3s; }
-    .loading { font-size: 2.56%; font-weight: 500; color: #007bff; margin-top: 20px; }
-    input { width: 100%; padding: 1px; margin-bottom: 1px; font-size: 2.56%; }
-    .btn-group button { margin: 0.67px; font-size: 2.56%; }
+    .loading { font-size: 18px; font-weight: 500; color: #007bff; margin-top: 20px; }
+    input { width: 100%; padding: 10px; margin-bottom: 10px; }
+    .btn-group button { margin: 5px; }
   </style>
   <script>
-    const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyh8cJsYJqC3SpJPNX4042uhqZkJPtJNq-FaLdBmS1vBLjin41qOCcCGYqRX5Zwow-6AA/exec";
+    const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxgI6hAMtBAHmqvj_TDx1cK53XeMpLA6-WjIP5XM0j3ZXfMdEfv50qXWVE5rJ3_FQQ/exec";
     let tableData = [];
     async function loadTable() {
       try {
@@ -39,7 +39,7 @@
     }
     function renderTable(data) {
       const tableContainer = document.getElementById("table-container");
-      let tableHTML = "<input type='text' id='filterInput' onkeyup='filterTable()' placeholder='Search...' style='font-size: 2.56%;'>";
+      let tableHTML = "<input type='text' id='filterInput' onkeyup='filterTable()' placeholder='Search...'>";
       tableHTML += "<table><thead><tr>";
       data[0].forEach(header => { tableHTML += `<th>${header}</th>`; });
       tableHTML += "</tr></thead><tbody id='tableBody'>";
@@ -50,9 +50,9 @@
       }
       tableHTML += "</tbody></table>";
       tableHTML += `<div class='btn-group'>
-                      <button onclick='downloadCSV()' style='font-size: 2.56%;'>Download CSV</button>
-                      <button onclick='downloadExcel()' style='font-size: 2.56%;'>Download Excel</button>
-                      <button onclick='downloadPDF()' style='font-size: 2.56%;'>Download PDF</button>
+                      <button onclick='downloadCSV()'>Download CSV</button>
+                      <button onclick='downloadExcel()'>Download Excel</button>
+                      <button onclick='downloadPDF()'>Download PDF</button>
                     </div>`;
       tableContainer.innerHTML = tableHTML;
     }
