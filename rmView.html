@@ -15,7 +15,7 @@
     .container { width: 90%; max-width: 900px; margin: auto; padding: 20px; background: white; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15); transition: 0.3s; }
     .container:hover { box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2); }
     table { width: 100%; border-collapse: collapse; margin-top: 20px; table-layout: auto; }
-    th, td { padding: 1.67px; border-bottom: 1px solid #ddd; text-align: left; font-size: 2.56%; white-space: nowrap; }
+    th, td { padding: 1.67px; border-bottom: 1px solid #ddd; text-align: left; font-size: 2.56%; white-space: nowrap; max-width: 200px; overflow: hidden; text-overflow: ellipsis; }
     thead th { background-color: #007bff; color: white; position: sticky; top: 0; }
     tr:nth-child(even) { background-color: #f8f9fc; }
     tr:hover { background-color: #dde6f1; transition: 0.3s; }
@@ -45,7 +45,7 @@
       tableHTML += "</tr></thead><tbody id='tableBody'>";
       for (let i = 1; i < data.length; i++) {
         tableHTML += "<tr>";
-        data[i].forEach(cell => { tableHTML += `<td>${cell}</td>`; });
+        data[i].forEach(cell => { tableHTML += `<td title='${cell}'>${cell}</td>`; });
         tableHTML += "</tr>";
       }
       tableHTML += "</tbody></table>";
