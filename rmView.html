@@ -7,14 +7,13 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
   <style>
     body {
-      font-family: "Poppins", sans-serif;
+      font-family: Arial, sans-serif;
       text-align: center;
       margin: 20px;
-      background-color: #eef2f7;
+      background-color: #f8f9fa;
     }
     h1 {
       color: #333;
-      font-weight: 600;
     }
     .container {
       width: 90%;
@@ -23,11 +22,7 @@
       padding: 20px;
       background: white;
       border-radius: 10px;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
-      transition: 0.3s;
-    }
-    .container:hover {
-      box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     }
     table {
       width: 100%;
@@ -35,32 +30,23 @@
       margin-top: 20px;
       border-radius: 8px;
       overflow: hidden;
-      box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
-      background: white;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     }
     th, td {
-      padding: 14px;
+      padding: 12px;
       border-bottom: 1px solid #ddd;
       text-align: left;
-      font-size: 5px;
     }
     th {
       background-color: #007bff;
       color: white;
-      text-transform: uppercase;
     }
     tr:nth-child(even) {
-      background-color: #f8f9fc;
+      background-color: #f2f2f2;
     }
     tr:hover {
-      background-color: #dde6f1;
+      background-color: #e9ecef;
       transition: 0.3s;
-    }
-    .loading {
-      font-size: 18px;
-      font-weight: 500;
-      color: #007bff;
-      margin-top: 20px;
     }
   </style>
   <script>
@@ -73,7 +59,6 @@
         renderTable(data);
       } catch (error) {
         console.error("Error loading data:", error);
-        document.getElementById("table-container").innerHTML = "<p style='color: red;'>Failed to load data. Please try again.</p>";
       }
     }
 
@@ -105,7 +90,7 @@
 <body>
   <div class="container">
     <h1>Dynamic Table from Google Sheets</h1>
-    <div id="table-container" class="loading">Loading table...</div>
+    <div id="table-container">Loading table...</div>
   </div>
 </body>
 </html>
