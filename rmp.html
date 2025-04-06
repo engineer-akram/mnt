@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regional Manager M&T Information Desk</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: 600;
+        }
+        
+        .subtitle {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-top: 8px;
+        }
+        
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .option {
+            padding: 18px;
+            background-color: white;
+            border-radius: 6px;
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border-left: 5px solid var(--secondary-color);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            text-align: left;
+            display: flex;
+            align-items: center;
+        }
+        
+        .option:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-left-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+        
+        .option::before {
+            content: "→";
+            margin-right: 15px;
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+        
+        .option:hover::before {
+            color: var(--accent-color);
+        }
+        
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 14px;
+            color: #7f8c8d;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>INFORMATION DESK FOR REGIONAL MANAGER M&T</h1>
+        <div class="subtitle">Select an option below to view detailed information</div>
+    </header>
+    
+    <div class="options">
+        <a href="cChecking.html" class="option" target="_blank">Combined Physical Checking Reports</a>
+        <a href="cityForm.html" class="option" target="_blank">City Circle Physical Checking Report</a>
+        <a href="canttForm.html" class="option" target="_blank">Cantt Circle Physical Checking Report</a>
+        <a href="sialkotForm.html" class="option" target="_blank">Sialkot Circle Physical Checking Report</a>
+        <a href="grtForm.html" class="option" target="_blank">Gujrat Circle Physical Checking Report</a>
+        <a href="nrwForm.html" class="option" target="_blank">Narowal Circle Physical Checking Report</a>
+        <a href="mbdForm.html" class="option" target="_blank">MB Din Circle Physical Checking Report</a>
+
+        <a href="tfReclaimed.html" class="option" target="_blank">Reclaimed T/Fs At Stores</a>
+        <a href="tfDamaged.html" class="option" target="_blank">Damaged T/Fs At Stores</a>
+        <a href="tfIrreparable.html" class="option" target="_blank">Irreparable T/Fs At Stores</a>
+        <a href="absTRW.html" class="option" target="_blank">TRW Miscellaneous Reports</a>
+    </div>
+    
+    <footer>
+        <p>© 2023 M&T Regional Management System | For authorized use only</p>
+    </footer>
+</body>
+</html>

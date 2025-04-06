@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GEPCO M&T Narowal Circle</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            padding: 20px;
+            border-radius: 10px;
+            background: #fff;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+        }
+        nav {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+        }
+        nav h1 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+            display: block;
+            width: 100%;
+        }
+        h2 {
+            text-align: center;
+            color: #007bff;
+            margin-top: 20px;
+            font-size: 24px;
+        }
+        .feedback-form {
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 8px;
+            background: #fff;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .feedback-form input, .feedback-form textarea {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .feedback-form button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .feedback-form button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <nav class="container">
+        <h1>GEPCO M&T Narowal Circle</h1>
+    </nav>
+
+    <main class="container">
+        <h2>This site offers following services</h2>
+        <div class="grid">
+            <div class="card"><a href="https://docs.google.com/forms/d/e/1FAIpQLSej3rKXn6EjiYZcCYr8PWtaeL81jQQQxC2lda0QLBtHfizGcA/viewform?usp=header">Submit Online Checking</a></div>
+            <div class="card"><a href="nrwForm.html">View Checking Status</a></div>
+            <div class="card"><a href="#">Update Progress of Data Retrieval</a></div>
+            <div class="card"><a href="#">Update Progress of Detection</a></div>
+            <div class="card"><a href="#">View Reports</a></div>
+            <div class="card"><a href="#">Contact Developer</a></div>
+            <div class="card"><a href="#">Feedback</a></div>
+            <div class="card">Email: <a href="mailto:regional@gepco.com">regional@gepco.com</a></div>
+        </div>
+        
+        <div class="feedback-form">
+            <h3>Send Us Your Feedback</h3>
+            <form action="mailto:eengineer.akram@gmail.com" method="post" enctype="text/plain">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea id="feedback" name="feedback" rows="4" placeholder="Write your feedback here..." required></textarea>
+                <button type="submit">Send Feedback</button>
+            </form>
+        </div>
+    </main>
+    
+    <footer class="container" style="text-align: center;">
+        <p>&copy; 2025 GEPCO M&T Regional Office. All Rights Reserved.</p>
+        <p>For feedback, contact: <a href="mailto:eengineer.akram@gmail.com">eengineer.akram@gmail.com</a></p>
+        <p><strong>Legal Disclaimer:</strong> The information on this website is for official use only. Unauthorized use, distribution, or reproduction is strictly prohibited. GEPCO is not responsible for any misuse of this content.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEPCO M&T Region</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #003366;
+            --accent-color: #ffc107;
+            --light-bg: #f8f9fa;
+            --dark-text: #212529;
+            --light-text: #6c757d;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--dark-text);
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            color: white;
+            padding: 3rem 1rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80') center/cover;
+            opacity: 0.15;
+            z-index: 0;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin: 3rem 0 2rem;
+            color: var(--secondary-color);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--accent-color);
+            margin: 0.5rem auto;
+            border-radius: 2px;
+        }
+        
+        .office-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: none;
+            text-align: center;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card-icon {
+            background: var(--primary-color);
+            color: white;
+            padding: 1.5rem;
+            font-size: 2rem;
+        }
+        
+        .card-content {
+            padding: 1.5rem;
+        }
+        
+        .card h5 {
+            margin: 0;
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+        }
+        
+        .card a {
+            color: inherit;
+            text-decoration: none;
+            display: block;
+            padding: 1.5rem;
+        }
+        
+        .card a:hover {
+            text-decoration: none;
+        }
+        
+        .feedback-form {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            margin: 3rem 0;
+        }
+        
+        .feedback-form h4 {
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        button:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+        
+        footer {
+            background: var(--secondary-color);
+            color: white;
+            padding: 3rem 1rem;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-section h5 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .footer-section p, .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-section a:hover {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .disclaimer {
+            font-size: 0.8rem;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 1rem;
+            border-radius: 5px;
+            margin-top: 1.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>GEPCO M&T Region</h1>
+            <p>Monitoring & Ensuring Metering Accuracy - Powering Progress Through Excellence</p>
+            <i class="fas fa-bolt" style="font-size: 2rem; color: var(--accent-color);"></i>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2 class="section-title">Our Circle/Regional Offices</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; color: var(--light-text);">
+            Select your relevant office to update or view information.
+        </p>
+        
+        <div class="office-list">
+            <div class="card">
+                <a href="lgRm.html">
+                    <div class="card-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="card-content">
+                        <h5>GEPCO M&T Regional Office</h5>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="card">
+                <a href="https://engineer-akram.github.io/mntcity/">
+                    <div class="card-icon">
+                        <i class="fas fa-city"></i>
+                    </div>
+                    <div class="card-content">
+                        <h5>GEPCO M&T City Circle</h5>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="card">
+                <a href="lgCantt.html">
+                    <div class="card-icon">
+                        <i class="fas fa-flag"></i>
+                    </div>
+                    <div class="card-content">
+                        <h5>GEPCO M&T Cantt Circle</h5>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="card">
+                <a href="lgSkt.html">
+                    <div class="card-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <div class="card-content">
+                        <h5>GEPCO M&T Sialkot Circle</h5>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="card">
+                <a href="lgGrt.html">
+                    <div class="card-icon">
+                        <i class="fas fa-subway"></i>
+                    </div>
+                    <div class="card-content">
+                        <h5>GEPCO M&T Gujrat Circle</h5>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="card">
+                <a href="lgNrw.html">
+                    <div class="card-icon">
+                        <i class="fas fa-tractor"></i>
+                    </div>
+                    <div class="card-content">
+                        <h5>GEPCO M&T Narowal Circle</h5>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="card">
+                <a href="lgMbd.html">
+                    <div class="card-icon">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <div class="card-content">
+                        <h5>GEPCO M&T Mandi Bahaudin Circle</h5>
+                    </div>
+                </a>
+            </div>
+            <div class="card">
+                <a href="lgRMO.html">
+                    <div class="card-icon">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <div class="card-content">
+                        <h5>RM M&T</h5>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="card">
+                <a href="https://engineer-akram.github.io/trw/">
+                    <div class="card-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="card-content">
+                        <h5>GEPCO T/F Reclamation Workshops</h5>
+                    </div>
+                </a>
+            </div>
+        </div>
+        
+        <div class="feedback-form">
+            <h4><i class="fas fa-comment-alt mr-2"></i>Send Us Your Feedback</h4>
+            <form action="mailto:eengineer.akram@gmail.com" method="post" enctype="text/plain">
+                <div class="form-group">
+                    <label for="name">Your Name (Optional)</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email (Optional)</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="feedback">Your Feedback:</label>
+                    <textarea id="feedback" name="feedback" rows="4" placeholder="Write your feedback here..." required></textarea>
+                </div>
+                <button type="submit">
+                    <i class="fas fa-paper-plane"></i> Send Feedback
+                </button>
+            </form>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h5>About GEPCO M&T</h5>
+                <p>M&T Region of GEPCO is responsible for Monitoring & Ensuring Accurate Metering For Power Distribution and all type metering infrastructure/maintenance across our service area.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h5>Quick Links</h5>
+                <a href="#">Home</a><br>
+                <a href="#">Regional Manager</a><br>
+                <a href="#">Contact Directory</a><br>
+                <a href="#">Service Portal</a>
+            </div>
+            
+            <div class="footer-section">
+                <h5>Contact Us</h5>
+                <p><i class="fas fa-envelope mr-2"></i> <a href="mailto:eengineer.akram@gmail.com">support@mntRegion</a></p>
+                <p><i class="fas fa-phone mr-2"></i> Regional Office Phone</p>
+                <p><i class="fas fa-map-marker-alt mr-2"></i> GEPCO Headquarters Address</p>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 Gujranwala Electric Power Company (GEPCO) - M&T Region. All Rights Reserved.</p>
+            <p>Site created and maintained by Muhammad Akram, Additional Manager GEPCO</p>
+        </div>
+        
+        <div class="disclaimer">
+            <p><strong>Disclaimer:</strong> This website and its contents are for internal use/purposes only. The provisional information provided here is intended solely for authorized personnel of GEPCO M&T Offices. Unauthorized use, reproduction, or distribution of any content from this website is strictly prohibited. GEPCO is not responsible for any misuse of the information presented on this site nor any information thereof can be referenced in any context.</p>
+        </div>
+    </footer>
+</body>
+</html>
